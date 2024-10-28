@@ -13,15 +13,26 @@
         const fruit = ["apple", "banana", "cherry"]; // CREATE ARRAY
 
         function addToPage(content, index) {
+            const number = index === undefined ? "" : index + 1;
+            const prefix = number === "" ? "" : number + " - ";
             document.body.innerHTML += index + " - " + content + "<br>"; // ADD TO PAGE
         }
 
-        addToPage("hello", 123) //manually pass a number as argument 2
-        addToPage("goodbye", 456)
+        // addToPage("hello", 123) //manually pass a number as argument 2
+        // addToPage("goodbye", 456)
 
-        fruit.forEach(addToPage); // apply add function to each array element
+        function addListToPage(name, list) {
+            addToPage(`<BR>===${name}===`);
+            list.forEach(addToPage) // passes value, index, array
+        }
 
-        ["bob", "carol", "ted", "alice"].forEach(addToPage); // apply add function to each array element
+        // fruit.forEach(addToPage); // apply add function to each array element
+
+        // ["bob", "carol", "ted", "alice"].forEach(addToPage); // apply add function to each array element
+
+        addListToPage("FRUIT", fruit);
+        addListToPage("PEOPLE", ["bob", "carol", "ted", "alice"]);
+
     </script>
     <script src="elements.js"></script>
 </body>
