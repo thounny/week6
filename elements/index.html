@@ -8,9 +8,22 @@
 </head>
 
 <body>
+    <h1>Elements</h1>
+    <script>
+        const fruit = ["apple", "banana", "cherry"]; // CREATE ARRAY
 
+        function addToPage(content, index) {
+            document.body.innerHTML += index + " - " + content + "<br>"; // ADD TO PAGE
+        }
 
-    <script src="elements.js"></script>t
+        addToPage("hello", 123) //manually pass a number as argument 2
+        addToPage("goodbye", 456)
+
+        fruit.forEach(addToPage); // apply add function to each array element
+
+        ["bob", "carol", "ted", "alice"].forEach(addToPage); // apply add function to each array element
+    </script>
+    <script src="elements.js"></script>
 </body>
 
 </html>
