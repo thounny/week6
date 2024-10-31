@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Demo</title>
+</head>
+
+<body>
+    <h1>Web Demo</h1>
+    <h2>Basketball Teams</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Team Name</th>
+                <th>Rank</th>
+            </tr>
+        </thead>
+        <tbody id="teamsBody"></tbody>
+    </table>
+</body>
+
+<script>
+    // Corrected data structure
+    const teamsList = [
+        { teamName: "Chicago Bulls", rank: 3 },
+        { teamName: "Cleveland Cavaliers", rank: 1 },
+    ];
+
+    // Corrected createTeamRow function
+    function createTeamRow(teamObject) {
+        const trTeam = document.createElement('tr');
+        const tdTeamName = document.createElement('td');
+        const tdRank = document.createElement('td');
+
+        tdRank.innerText = teamObject.rank;
+        tdTeamName.innerText = teamObject.teamName;
+
+        trTeam.appendChild(tdTeamName);
+        trTeam.appendChild(tdRank);
+        teamsBody.appendChild(trTeam);
+
+    }
+
+    // Corrected forEach loop
+    teamsList.forEach(createTeamRow)
+</script>
+
+</html>
