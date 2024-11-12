@@ -27,3 +27,5 @@ fruit.forEach((f) => console.log(f));
     console.log(`Current value: ${n}, Previous value: N/A, Difference: N/A`);
   }
 });
+
+// yurt
